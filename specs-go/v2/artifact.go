@@ -1,6 +1,9 @@
 package v2
 
-import "github.com/opencontainers/artifacts/specs-go"
+import (
+	"github.com/opencontainers/image-spec/specs-go"
+	v1 "github.com/opencontainers/image-spec/specs-go/v1"
+)
 
 // Artifact describes a registry artifact.
 // This structure provides `application/vnd.oci.artifact.manifest.v1+json` mediatype when marshalled to JSON.
@@ -14,13 +17,13 @@ type Artifact struct {
 	ArtifactType string `json:"artifactType"`
 
 	// Config references the index configuration.
-	Config Descriptor `json:"config"`
+	Config v1.Descriptor `json:"config"`
 
 	// Blobs is a collection of blobs referenced by this manifest.
-	Blobs []Descriptor `json:"blobs"`
+	Blobs []v1.Descriptor `json:"blobs"`
 
 	// Manifests is a collection of manifests this artifact is linked to.
-	Manifests []Descriptor `json:"manifests"`
+	Manifests []v1.Descriptor `json:"manifests"`
 
 	// Annotations contains arbitrary metadata for the artifact manifest.
 	Annotations map[string]string `json:"annotations,omitempty"`
