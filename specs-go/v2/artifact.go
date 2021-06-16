@@ -1,6 +1,6 @@
 package v2
 
-import "github.com/notaryproject/artifacts/specs-go"
+import "github.com/opencontainers/artifacts/specs-go"
 
 // Artifact describes a registry artifact.
 // This structure provides `application/vnd.oci.artifact.manifest.v1+json` mediatype when marshalled to JSON.

@@ -1,4 +1,4 @@
-module github.com/notaryproject/artifacts
+module github.com/opencontainers/artifacts
 
 go 1.16
 
